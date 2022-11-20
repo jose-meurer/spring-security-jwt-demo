@@ -42,7 +42,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http
-                .csrf(csrf -> csrf.disable()) //Desativar falsificação de solicitação entre sites (CSRF)
+                .csrf().disable() //Desativar falsificação de solicitação entre sites (CSRF)
                 .authorizeRequests(auth -> auth
                         .anyRequest().authenticated() //O usuário deve ser autenticado para qualquer solicitação no aplicativo
                 )
